@@ -236,7 +236,7 @@ var MORTY_HTML_PAGE_END string = `
 	</div>
 	<div class="footer">
 		<p>Morty rewrites web pages to exclude malicious HTML tags and CSS/HTML attributes. It also replaces external resource references to prevent third-party information leaks.<br />
-		<a href="https://github.com/asciimoo/morty">view on github</a>
+		<a href="https://github.com/0xHx/morty">view on github</a>
 		</p>
 	</div>
 </body>
@@ -265,7 +265,7 @@ func init() {
   </form>
 </div>
 <style>
-body{ position: absolute !important; top: 42px !important; left: 0 !important; right: 0 !important; bottom: 0 !important; }
+body{ position: absolute !important; left: 0 !important; right: 0 !important; bottom: 0 !important; }
 #mortyheader { position: fixed; margin: 0; box-sizing: border-box; -webkit-box-sizing: border-box; top: 0; left: 0; right: 0; z-index: 2147483647 !important; font-size: 12px; line-height: normal; border-width: 0px 0px 2px 0; border-style: solid; border-color: #AAAAAA; background: #FFF; padding: 4px; color: #444; display: none; }
 #mortyheader * { padding: 0; margin: 0; }
 #mortyheader p { padding: 0 0 0.7em 0; display: block; }
