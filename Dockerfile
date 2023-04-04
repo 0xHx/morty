@@ -13,7 +13,7 @@ RUN gofmt -l ./
 RUN go build .
 
 # STEP 2 build the image including only the binary
-FROM alpine:3.12
+FROM alpine:3.17
 
 EXPOSE 3000
 
