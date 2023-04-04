@@ -25,6 +25,6 @@ COPY --from=builder /go/src/github.com/asciimoo/morty/morty /usr/local/morty/mor
 
 USER morty
 
-ENV DEBUG=true
+ENV DEBUG=false
 
 ENTRYPOINT ["/usr/local/morty/morty"]

@@ -1,0 +1,30 @@
+name: Publish Docker image
+
+on:
+  workflow_dispatch:
+
+jobs:
+  push_to_registry:
+    name: Push image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        name: Check out code
+
+      - name: debug
+        run: |
+          printenv
+        shell: bash
+
+      - uses: mr-smithers-excellent/docker-build-push@v5
+        name: Build & push Docker image
+        with:
+          image: zxing/morty
+          tags: latest,v1,v1.${{ github.run_id }}
+          addLatest: true
+          addTimestamp: true
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          buildArgs: GIT_URL=https://github.com/0xHx/morty,SEARXNG_GIT_VERSION=v1.${{ github.run_id }},BUILD_DATE=${date}
